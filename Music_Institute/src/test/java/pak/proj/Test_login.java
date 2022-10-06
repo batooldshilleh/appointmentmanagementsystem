@@ -5,24 +5,24 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 
-
-
-
-
 public class Test_login {
-	@Given("The user has entered all the data correctly  email, password")
-	public void the_user_has_entered_all_the_data_correctly_email_password1() {
-	    
+	user u = new user();
+	@Given("The user has entered all the data correctly  {string},{string}")
+	public void the_user_has_entered_all_the_data_correctly(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+	    u.setpass(string2);
+	    u.setusername(string);
+	     
 	}
 
-	@When("user clicks login button")
-	public void user_clicks_login_button() {
+	@Given("that the admin is not logged in")
+	public void that_the_admin_is_not_logged_in() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
 
-	@Then("go to home page")
-	public void go_to_home_page() {
+	@Then("show menu")
+	public void show_menu() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}

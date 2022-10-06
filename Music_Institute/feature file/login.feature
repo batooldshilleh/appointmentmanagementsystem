@@ -7,9 +7,9 @@ Background:
 
 @tag1
 Scenario: The login process has been completed successfully1
-	Given The user has entered all the data correctly  email, password
-	When user clicks login button
-	Then go to home page
+	Given The user has entered all the data correctly  "email"," password"
+	And that the admin is not logged in
+	Then show menu
 	
 @tag2
 Scenario: Incomplete request
