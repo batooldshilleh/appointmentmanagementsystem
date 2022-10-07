@@ -9,7 +9,7 @@ public class user {
     Logger logger = Logger.getLogger(user.class.getName());
     
 	public void setLogstat(boolean l) {
-		// TODO Auto-generated method stub
+	
 		this.logged = l;
 	}
 
@@ -19,12 +19,12 @@ public class user {
 	}
 
 	public void setUsrname(String string) {
-		// TODO Auto-generated method stub
+	
 		this.userName = string;
 	}
 
 	public void setPass(String string2) {
-		// TODO Auto-generated method stub
+		
 		this.pass= string2;
 	}
 

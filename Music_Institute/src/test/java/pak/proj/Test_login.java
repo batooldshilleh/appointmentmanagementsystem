@@ -7,10 +7,9 @@ import io.cucumber.java.en.When;
 
 public class Test_login {
 user u = new user();
-	
 	@Given("that the admin is not logged in")
 	public void that_the_admin_is_not_logged_in() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 		 u.setLogstat(false);
          assertFalse(u.getLogstat());
 	}
