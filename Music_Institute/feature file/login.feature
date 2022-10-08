@@ -8,7 +8,7 @@ Background:
 
 @tag1
 Scenario: The login process has been completed successfully1
-	Given that the admin is not logged in
+	Given that the user is not logged in
 	And  The user has entered all the data correctly  "email"," password"
 	When the Type "t"
 	Then show tehar menu

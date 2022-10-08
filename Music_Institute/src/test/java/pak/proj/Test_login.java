@@ -7,16 +7,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-<<<<<<< HEAD
+
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger; 
-=======
-
->>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
+ 
 public class Test_login {
-<<<<<<< HEAD
+
 	user u = new user();
 	 List <user> usernames = new ArrayList<user>();
 	 List <user> passwords = new ArrayList<user>();
@@ -25,15 +23,8 @@ public class Test_login {
 	 boolean Assert_UN = false;
 	 
 	 
-	@Given("that the admin is not logged in")
-	public void that_the_admin_is_not_logged_in() {
-	    // Write code here that turns the phrase above into concrete actions
-=======
-user u = new user();
-	@Given("that the admin is not logged in")
-	public void that_the_admin_is_not_logged_in() {
-	    
->>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
+	@Given("that the user is not logged in")
+	public void that_the_user_is_not_logged_in() {
 		 u.setLogstat(false);
          assertFalse(u.getLogstat());
 	}
@@ -59,7 +50,6 @@ user u = new user();
 	    u.setLogstat(true);
 	    assertTrue( u.getLogstat());
 	}
-<<<<<<< HEAD
 	
 	//*****************
 	
@@ -74,18 +64,13 @@ user u = new user();
 	    // Write code here that turns the phrase above into concrete actions
 	    flag = Login.serchName(string);
 	    if(flag.isEmpty()) {
-	    	logger.log(null, "User Name Error");
+	    	logger.log(null, "The email entered is incorrect");
 	    	Assert_UN  = false;
-	    }
-	    else {
-	    	assertTrue(Assert_UN);
 	    }
 	    assertFalse(Assert_UN);
 	    
 	}
-	
-=======
->>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
+
 }
 
 
