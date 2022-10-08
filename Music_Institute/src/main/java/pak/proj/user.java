@@ -10,6 +10,7 @@ public class user {
 	String Type;
     private boolean logged;
     
+
     
     Logger logger = Logger.getLogger(user.class.getName());
     
@@ -54,6 +55,11 @@ public class user {
 			return true ;
 		else return false;
 			
+	}
+
+	public String getusername() {
+		// TODO Auto-generated method stub
+		return userName;
 	}
 
 

@@ -10,16 +10,14 @@ import io.cucumber.java.en.When;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
-
+import java.util.logging.Logger; 
 public class Test_login {
 	user u = new user();
 	 List <user> usernames = new ArrayList<user>();
 	 List <user> passwords = new ArrayList<user>();
-	 List <user> tayps = new ArrayList<user>();
-	 
+	 List <user> flag = new ArrayList<user>();
 	 Logger logger = Logger.getLogger(Test_login.class.getName());
-	 boolean Assert_pass = false;
+	 boolean Assert_UN = false;
 	 
 	 
 	@Given("that the admin is not logged in")
@@ -62,7 +60,16 @@ public class Test_login {
 	@Then("Show {string} message.")
 	public void show_message(String string) {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    flag = Login.serchName(string);
+	    if(flag.isEmpty()) {
+	    	logger.log(null, "User Name Error");
+	    	Assert_UN  = false;
+	    }
+	    else {
+	    	assertTrue(Assert_UN);
+	    }
+	    assertFalse(Assert_UN);
+	    
 	}
 	
 }
