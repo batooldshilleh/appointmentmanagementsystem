@@ -20,11 +20,11 @@ Scenario: The login process has been completed successfully1
 	#And user clicks login1 button
 	#Then Show "Please fill in all required fields" message.
 
-@tag3
-Scenario: Email error
-  Given that the admin is not logged in
-	And "username" is not in the database
-	Then Show "The email entered is incorrect" message.
+#@tag3
+#Scenario: Email error
+  #Given that the admin is not logged in
+	#And "username" is not in the database
+	#Then Show "The email entered is incorrect" message.
 	
 #@tag4
 #Scenario: password error
