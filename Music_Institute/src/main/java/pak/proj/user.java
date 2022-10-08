@@ -1,5 +1,7 @@
 package pak.proj;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class user {
@@ -7,6 +9,7 @@ public class user {
 	String userName;
 	String Type;
     private boolean logged;
+    
     
     Logger logger = Logger.getLogger(user.class.getName());
     

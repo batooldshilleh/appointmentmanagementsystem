@@ -14,18 +14,17 @@ Scenario: The login process has been completed successfully1
 	Then show tehar menu
 	
 	
-@tag2
-Scenario: Incomplete request
-	When  The user left one of the fields blank  Password , Email 
-	And user clicks login1 button
-	Then Show "Please fill in all required fields" message.
+#@tag2
+#Scenario: Incomplete request
+	#When  The user left one of the fields blank  Password , Email 
+	#And user clicks login1 button
+	#Then Show "Please fill in all required fields" message.
 
-#@tag3
-#Scenario: Email error
- # Given The user has entered all the data correctly email, password
-	#And Emily is not in the database
-	#When user clicks register button
-	#Then Show "The email entered is incorrect" message.
+@tag3
+Scenario: Email error
+  Given that the admin is not logged in
+	And "username" is not in the database
+	Then Show "The email entered is incorrect" message.
 	
 #@tag4
 #Scenario: password error
