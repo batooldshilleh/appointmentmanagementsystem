@@ -3,6 +3,7 @@ package pak.proj;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,6 +20,7 @@ public class Test_login {
 	 List <user> usernames = new ArrayList<user>();
 	 List <user> passwords = new ArrayList<user>();
 	 List <user> flag = new ArrayList<user>();
+	 List <user> info = new ArrayList<user>();
 	 Logger logger = Logger.getLogger(Test_login.class.getName());
 	 boolean Assert_UN = false;
 	 
@@ -51,7 +53,24 @@ public class Test_login {
 	    assertTrue( u.getLogstat());
 	}
 	
-	//*****************
+	
+	@Given("table")
+	public void table(io.cucumber.datatable.DataTable dataTable) {
+		
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    for (int i =0; i<dataTable.height();i++) {
+	    	user b = new user(dataTable.cell(i, 0),dataTable.cell(i, 1),dataTable.cell(i, 2));
+	    	
+	    	info.add(b);
+	    }
+	}
+	/-----------------------------------------------/
 	
 	@Given("{string} is not in the database")
 	public void is_not_in_the_database(String string) {
@@ -62,15 +81,35 @@ public class Test_login {
 	@Then("Show {string} message.")
 	public void show_message(String string) {
 	    // Write code here that turns the phrase above into concrete actions
+	
 	    flag = Login.serchName(string);
 	    if(flag.isEmpty()) {
 	    	logger.log(null, "The email entered is incorrect");
 	    	Assert_UN  = false;
+	    	assertFalse(Assert_UN);
 	    }
-	    assertFalse(Assert_UN);
-	    
+	    else
+	    {
+	    	Assert_UN  = true;
+	    	assertTrue(Assert_UN);
+	    }
+	}
+	
+	
+
+
+	@Given("the {string} not in database")
+	public void the_not_in_database(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+		for(int element=0;element <info.size();element++) {
+			 
+            System.out.print(info.get(element));}
+	}
+
+	@Then("Show masseg {string}")
+	public void show_masseg(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 
 }
-
-
