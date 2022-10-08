@@ -7,11 +7,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+<<<<<<< HEAD
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger; 
+=======
+
+>>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
 public class Test_login {
+<<<<<<< HEAD
 	user u = new user();
 	 List <user> usernames = new ArrayList<user>();
 	 List <user> passwords = new ArrayList<user>();
@@ -23,6 +28,12 @@ public class Test_login {
 	@Given("that the admin is not logged in")
 	public void that_the_admin_is_not_logged_in() {
 	    // Write code here that turns the phrase above into concrete actions
+=======
+user u = new user();
+	@Given("that the admin is not logged in")
+	public void that_the_admin_is_not_logged_in() {
+	    
+>>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
 		 u.setLogstat(false);
          assertFalse(u.getLogstat());
 	}
@@ -48,6 +59,7 @@ public class Test_login {
 	    u.setLogstat(true);
 	    assertTrue( u.getLogstat());
 	}
+<<<<<<< HEAD
 	
 	//*****************
 	
@@ -72,6 +84,8 @@ public class Test_login {
 	    
 	}
 	
+=======
+>>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
 }
 
 
