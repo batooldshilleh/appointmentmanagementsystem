@@ -10,7 +10,13 @@ public class user {
 	String Type;
     private boolean logged;
     
-
+    user(){}
+    
+    user(String name, String pass , String type){
+    	userName = name;
+    	this.pass = pass;
+    	Type = type;
+    }
     
     Logger logger = Logger.getLogger(user.class.getName());
     
@@ -61,6 +67,19 @@ public class user {
 		// TODO Auto-generated method stub
 		return userName;
 	}
+	
 
+	public boolean TypeCS(String string) {
+		// TODO Auto-generated method stub
+		if(string == "s" || string =="S")
+			return true ;
+		else return false;
+			
+	}
+
+	public String getpsse() {
+		// TODO Auto-generated method stub
+		return pass;
+	}
 
 }
