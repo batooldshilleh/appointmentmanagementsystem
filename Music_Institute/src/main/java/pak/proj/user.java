@@ -1,15 +1,17 @@
 package pak.proj;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class user {
 	String pass;
 	String userName;
 	String Type;
     private boolean logged;
-    
+    public static List<user> users = new ArrayList<user>();
     user(){}
     
     user(String name, String pass , String type){
@@ -18,7 +20,7 @@ public class user {
     	Type = type;
     }
     
-    Logger logger = Logger.getLogger(user.class.getName());
+    static Logger logger = Logger.getLogger(user.class.getName());
     
 	public void setLogstat(boolean l) {
 		// TODO Auto-generated method stub
@@ -82,4 +84,14 @@ public class user {
 		return pass;
 	}
 
+	public static void adduser(user l) {
+		// TODO Auto-generated method stub
+	users.add(l);
+       
+	}
+	
+	public static void printus() {
+       for(int i =0 ; i< users.size();i++)
+    	   System.out.print(users.get(i));
+}
 }

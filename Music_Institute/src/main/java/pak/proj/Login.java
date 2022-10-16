@@ -4,26 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Login {
-	public static List<user> users = new ArrayList<user>();
-	
+	private static List <user> users = new ArrayList<user>();
+	static boolean n;
+	static boolean m;
 	public static List<user> searchPass(String string) {
-		// TODO Auto-generated method stub
-		List<user> searched=new ArrayList<user>();
-	    for(int i = 0; i< users.size(); i++){
-	        if(users.get(i).getpsse().contains(string)) searched.add(users.get(i));
-
-	    }
-	    return searched;
+		List <user> pass = new ArrayList<user>();
+		for (int i =0 ; i< users.size();i++) {
+			if(users.get(i).getpsse().contains(string))
+				pass.add(users.get(i));
+		}
+		return pass;
 	}
 
 	public static List<user> serchName(String string) {
-		// TODO Auto-generated method stub
-		List<user> searched=new ArrayList<user>();
-	    for(int i = 0; i< users.size(); i++){
-	        if(users.get(i).getusername().contains(string)) searched.add(users.get(i));
-
-	    }
-	    return searched;
+		
+		List <user> theName = new ArrayList<user>();
+		for (int i =0 ; i< users.size();i++) {
+			if(users.get(i).getusername().contains(string))
+				theName.add(users.get(i));
+		}
+		return theName;
 	}
+
+		 public static boolean isnameAvailable(String name) {
+		    	for (int i = 0 ; i<users.size();i++) {
+					if (users.get(i).getusername().equals(name))
+						n= true;
+				}
+				return n;
+		 }
+		   	 public static boolean ispassAvailable(String pass) {
+		   	    	for (int i = 0 ; i<users.size();i++) {
+		   				if (users.get(i).getpsse().equals(pass))
+		   					m= true;
+		   			}
+					return m;
+		   	 }
+
+			public static void addloog(user user) {
+				// TODO Auto-generated method stub
+				users.add(user);
+			}
 
 }
