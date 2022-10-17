@@ -29,7 +29,7 @@ public class user {
     	this.username=(name);
     	this.password=(pass);
         this.Type=(type);
-      
+        user.users1.add(new user(name,pass,type));
     	
     }
 	public void setType(String string) {
