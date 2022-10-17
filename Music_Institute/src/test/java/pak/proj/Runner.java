@@ -10,6 +10,6 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
                  monochrome = true,
                  snippets =SnippetType.CAMELCASE,
                  glue = {"pak.proj"})
-public class teat {
+public class Runner {
 
 }

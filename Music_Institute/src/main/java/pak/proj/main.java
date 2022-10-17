@@ -16,10 +16,12 @@ public class main {
 		 boolean isValid = false;
 		Scanner scanner = new Scanner(System.in);
 		user admin = new user();
+		String stte ;
 		
 		for(;;) {
+			
 		logger.log(Level.INFO,"welcome\n");
-	
+	        
 			logger.log(Level.INFO,"enter your name\n");
 			inp = scanner.next();
 			logger.log(Level.INFO,"enter the password\n");
@@ -46,5 +48,6 @@ public class main {
 		    break;
 			    
 		}
+			
 	}
 }
