@@ -1,97 +1,120 @@
 package pak.proj;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
 public class user {
-	String pass;
-	String userName;
+	
+	 static Logger logger = Logger.getLogger(user.class.getName());
+	String password;
+	String username;
 	String Type;
     private boolean logged;
-    public static List<user> users = new ArrayList<user>();
-    user(){}
-    
-    user(String name, String pass , String type){
-    	userName = name;
-    	this.pass = pass;
-    	Type = type;
+  	static boolean n;
+  	static boolean m;
+  	public static List<user> users1 =new ArrayList<user>();
+   
+    public user(){
+    	user.users1.add(new user("batool","123","t"));
+		user.users1.add(new user("manar","1234s","t"));
+		user.users1.add(new user("ahmad","1234","s"));
+		user.users1.add(new user("saja","1234","s"));	
+    	
     }
-    
-    static Logger logger = Logger.getLogger(user.class.getName());
+  
+    public user(String name, String pass,String type){
+    	this.username=(name);
+    	this.password=(pass);
+        this.Type=(type);
+      
+    	
+    }
+	public void setType(String string) {
+		
+		this.Type = string;
+	}
     
 	public void setLogstat(boolean l) {
-		// TODO Auto-generated method stub
+		
 		this.logged = l;
 	}
 
 	public boolean getLogstat() {
-		// TODO Auto-generated method stub
+		
 		return logged;
 	}
 
 	public void setUsrname(String string) {
-		// TODO Auto-generated method stub
-		this.userName = string;
+		
+		this.username = string;
 	}
 
 	public void setPass(String string2) {
-		// TODO Auto-generated method stub
-		this.pass= string2;
+		
+		this.password= string2;
 	}
 
 	public boolean loginCH(String string, String string2) {
-		// TODO Auto-generated method stub
-		if(string.equals(userName) && string2.equals(pass)) {
+		
+		if(string.equals(username) && string2.equals(password)) {
 			logged = true;
 		}
 		
 		else logged = false;
+		
+		setLogstat(logged);
 		return logged;
 	}
 
-	public void setType(String string) {
-		// TODO Auto-generated method stub
-		this.Type = string;
-	}
-
-	public boolean TypeCH(String string) {
-		// TODO Auto-generated method stub
-		if(string == "t" || string =="T")
-			return true ;
-		else return false;
-			
-	}
 
 	public String getusername() {
-		// TODO Auto-generated method stub
-		return userName;
+		
+		return username;
+	}
+
+	public String getpass() {
+		
+		return password;
 	}
 	
-
-	public boolean TypeCS(String string) {
-		// TODO Auto-generated method stub
-		if(string == "s" || string =="S")
-			return true ;
-		else return false;
-			
-	}
-
-	public String getpsse() {
-		// TODO Auto-generated method stub
-		return pass;
-	}
-
+	
 	public static void adduser(user l) {
-		// TODO Auto-generated method stub
-	users.add(l);
-       
+	user u =new user();
+		if(u.getLogstat())
+		{
+			users1.add(l);
+			
+		}
+		else
+			logger.log(Level.INFO,"you Should login first");
 	}
 	
-	public static void printus() {
-       for(int i =0 ; i< users.size();i++)
-    	   System.out.print(users.get(i));
-}
+   
+	
+	 public boolean isnameEqual(String name){
+	        return this.username.toLowerCase().equals(name);
+	    }
+	    public boolean ispassEqual(String pass){
+	        return this.password.toLowerCase().equals(pass);
+	    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

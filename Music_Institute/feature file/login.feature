@@ -3,22 +3,21 @@ The user wants to access his personal account
 
 Background: 
 Given table
-|username|password     |type|
-|batool  |"2001"|"s"   |
-|manar   |"m2#m"       |"t"   |
+|username|password     |
+|batool  |b|
+|manar   |m      |
 
 @tag1
-Scenario: The login process has been completed successfully1
+Scenario: login successfully
 	Given that the user is not logged in
-	And  The user has entered all the data correctly  "email"," password"
-	When the Type "t"
-	Then show tehar menu
-
+	And  The user has entered all the data correctly  "email" , "password"
+	Then the user is logged in successfully
+	
 @tag2
 Scenario: username error
   Given that the user is not logged in
 	And "username" is not in the database
-	Then Show "The email entered is incorrect" message.
+	Then Show "The username entered is incorrect" message.
 	
 @tag3
 Scenario: password error
