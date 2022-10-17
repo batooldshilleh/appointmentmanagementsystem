@@ -101,6 +101,9 @@ public class user {
 	        return this.password.toLowerCase().equals(pass);
 	    }
 	
+	    public boolean istybeEqual(String type){
+	        return this.Type.toLowerCase().equals(type);
+	    }
 	
 	
 	
