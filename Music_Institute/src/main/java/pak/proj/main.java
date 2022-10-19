@@ -16,6 +16,7 @@ public class main {
 		 boolean isValid = false;
 		Scanner scanner = new Scanner(System.in);
 		user admin = new user();
+		corse c = new corse();
 		
 		for(;;) {
 		logger.log(Level.INFO,"welcome\n");
@@ -44,7 +45,28 @@ public class main {
 			
 	
 		    admin.loginCH(inp,inp2);
-		    System.out.print(admin.getType());
+		    
+		    if(admin.isTechar(admin.getType())) {
+		    	System.out.println(" 1-my lectures"
+		    			+ "\n "
+		    			+ "2-Appointment Reservation");
+		    }
+		    else {
+		    	System.out.println(" 1-my lectures"
+		    			+"\n"
+		    			+"2-Course List"
+		    			+ "\n"
+		    			+ "3-Events");
+		    	for(int i =1 ; i<7; i++) {
+		    		logger.log(Level.INFO,c.corseinfo(i).getcorsename());
+		    	}
+		    	int ch =scanner.nextInt();
+		    	if(c.corseinfo(ch).getnos()==25) {
+		    		logger.log(Level.INFO,"full");
+		    	}
+
+
+		    }
 		    break;
 			    
 		}
