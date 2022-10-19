@@ -111,6 +111,7 @@ public class user {
 	    public boolean isTechar(String ut) {
 	    	return ut.toLowerCase().equals("t");
 	    }
+	    
 	    public user userinfo(String inp) {
 	    	user b = new user();
 			for (int i = 0;i<users1.size();i++) {
