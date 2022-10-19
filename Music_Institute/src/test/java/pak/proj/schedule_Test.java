@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class schedule_Test {
-	student s = new student();
+	
 	corse c = new corse();
 	static Logger logger
 	   = Logger.getLogger(Test_login.class.getName());
@@ -82,6 +82,10 @@ public class schedule_Test {
 	public void the_show_masseg(String string) {
 	    // Write code here that turns the phrase above into concrete actions
 		string="full class";
-		   logger.log(Level.INFO,string);
+
+
+
+	
 	}
 }
+

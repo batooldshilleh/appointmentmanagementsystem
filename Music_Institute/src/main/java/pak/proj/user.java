@@ -106,6 +106,7 @@ public class user {
 	    public boolean ispassEqual(String pass){
 	        return this.password.toLowerCase().equals(pass);
 	    }
+
 	    
 	    public boolean isTechar(String ut) {
 	    	return ut.toLowerCase().equals("t");
@@ -120,6 +121,14 @@ public class user {
 			}
 			return b;
 	    }
+
+	
+	    public boolean istybeEqual(String type){
+	        return this.Type.toLowerCase().equals(type);
+	    }
+	
+	
+
 	
 	
 	
