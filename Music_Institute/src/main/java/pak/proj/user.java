@@ -29,9 +29,10 @@ public class user {
     	this.username=(name);
     	this.password=(pass);
         this.Type=(type);
-        user.users1.add(new user(name,pass,type));
+
     	
     }
+   
 	public void setType(String string) {
 		
 		this.Type = string;
@@ -56,6 +57,8 @@ public class user {
 		
 		this.password= string2;
 	}
+	
+
 
 	public boolean loginCH(String string, String string2) {
 		
@@ -80,6 +83,9 @@ public class user {
 		return password;
 	}
 	
+	public String getType() {
+		return Type;
+	}
 	
 	public static void adduser(user l) {
 	user u =new user();
@@ -100,20 +106,20 @@ public class user {
 	    public boolean ispassEqual(String pass){
 	        return this.password.toLowerCase().equals(pass);
 	    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	    
+	    public boolean isTechar(String ut) {
+	    	return ut.toLowerCase().equals("t");
+	    }
+	    public user userinfo(String inp) {
+	    	user b = new user();
+			for (int i = 0;i<users1.size();i++) {
+				if (users1.get(i).getusername().equals(inp)) {
+					b = users1.get(i);
+					break;
+				}
+			}
+			return b;
+	    }
 	
 	
 	
