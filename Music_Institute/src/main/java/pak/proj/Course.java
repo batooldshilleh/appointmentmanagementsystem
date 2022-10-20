@@ -4,80 +4,89 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import pak.proj.*;
+
+import softw1.*;
+
 
 public class Course {
-	private String courseName;
-    private int numStudents;
-    private String teacher,day,time;
-    public static List<Course> Course =new ArrayList<Course>();
-    public static List<Course> Course2 =new ArrayList<Course>();
-    public static List<Student> Student ;
-    static Logger logger = Logger.getLogger(Course.class.getName());
+	private int corse_namber;
+	private String corse_name,teacher;
+	private int corse_price;
+	private int NumberOfStudent;
+	
+ 	public static List<Course> corses =new ArrayList<Course>();
     
-    public Course() {
-    	
-    	Course.add(new Course("Piano","Mohamad Omar",20,"Wednesday","09:00 AM"));
-    	Course.add(new Course("How to Play Guitar","Manar jber",27,"Thursday","10:00 AM"));
-    	Course.add(new Course("Music Production","Anas Toma",30,"Thursday","12:00 PM"));
-    	Course.add(new Course("Classical Music","Batool Shilh",20,"Monday","11:00 AM"));
-    	Course.add(new Course("Fundamentals of Music Theory","Ahmad ALNjar",15,"Monday","08:00 PM"));
-    	
-    	Course2.add(new Course("How to play the saxophone  ","Not booked",20,"Wednesday","10:00 AM"));
-    	Course2.add(new Course("Oriental Music","Not booked",27,"Sunday","10:00 AM"));
-    	
-    	
-    	
+    public Course(){
+    	Course.corses.add(new Course(1,"playing violin","ali",200,10));
+    	Course.corses.add(new Course(2,"playing guitar","batool",200,15));
+    	Course.corses.add(new Course(3,"Playing Piano","batool",300,14));
+    	Course.corses.add(new Course(4,"Fundamentals of musicology","manar",200,15));	
+    	Course.corses.add(new Course(5,"musical dictation","samer",200,15));
+    	Course.corses.add(new Course(6,"Singing principles","manar",200,25));
     	
     }
-    
-    public Course(String courseName,String teacher ,int noOfStudents,String day,String time){
-      
-        this.numStudents = noOfStudents;
-        this.courseName = courseName;
-        this.teacher =teacher;
-        this.day=day;
-        this.time=time;
-        this.Student=new ArrayList<Student>();
+    public Course(int n ,String string,String teacher, int string2, int string3) {
+    	this.corse_namber = n;
+    	this.NumberOfStudent = string3;
+    	this.corse_name = string;
+    	this.corse_price = string2;
+    	this.teacher=teacher;
+    	
     }
-   
-    public String getCourseName(){
-        return this.courseName;
-    }
-    public int getNoOfStudents(){
-        return this.numStudents;
-    }
-    public String getTeacher(){
-        return this.teacher;
-    }
-
-    public void setCourseName(String courseName){
-        this.courseName = courseName;
-    }
-    public void setNoOfStudents(int noOfStudents){
-        this.numStudents = noOfStudents;
-    }
-    public void setTeacher(String teacher){
-        this.teacher = teacher;
-    }
-    
-    public boolean add(Student student){
-
-		if (!Student.contains(student)){
-			Student.add(student);
-			return true;
+	
+	public void setCorsname(String string) {
+			
+			this.corse_name = string;
+		} 
+	public void setPrice(int p) {
+			
+			this.corse_price = p;
 		}
-		return false;
-	}  
-    public void remove(Student student){
-    	Student.remove(student);
+	public void setNOS(int n) {
+		
+		this.NumberOfStudent = n;
 	}
-    
-    public boolean isteacherEqual(String name){
-        return this.teacher.toLowerCase().equals(name);
-    }
-    public boolean isnamecourseEqual(String name){
-        return this.courseName.toLowerCase().equals(name);
-    }
+	public void setCN(int n) {
+			
+			this.corse_namber = n;
+		}
+	public String getcorsename() {
+			
+			return corse_name;
+		}
+	public int getCN() {
+		
+		return corse_namber;
+	}
+	public int getprice() {
+		
+		return corse_price;
+	}
+	
+	public int getnos() {
+			
+			return NumberOfStudent;
+		}
+
+	 public boolean isnameteacherEqual(String name){
+	        return this.teacher.toLowerCase().equals(name);
+	    }
+	 public Course corseinfo(int inp) {
+	    	Course c = new Course();
+			for (int i = 0;i<corses.size();i++) {
+				if (corses.get(i).getCN() == inp) {
+					c = corses.get(i);
+					break;
+				}
+			}
+			return c;
+	    }
+	 
+	 @Override
+	 public String toString() {
+	 	
+	     return 
+	     		this.corse_namber+" "+ this.corse_name +" "+ this.teacher +" "+ this.corse_price+" "+this.NumberOfStudent;
+	 }
     
 }
