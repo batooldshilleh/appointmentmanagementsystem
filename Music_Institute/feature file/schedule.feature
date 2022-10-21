@@ -13,7 +13,6 @@ Given the table of artical
 
 @tag1
 Scenario: successful course registration
-<<<<<<< HEAD
 	And   There is no conflict
 	And The premium paid is sufficient
 	And Number of studint in class less than the max
@@ -33,7 +32,6 @@ Scenario: premium paid not enough
 Scenario: full class  
 	And The number of student more than 25 
 	Then the show masseg ("full class ").
-=======
 	Given The user chose the class 
 	And   There is no conflict
 	And The premium paid is sufficient
@@ -56,5 +54,4 @@ Scenario: premium paid not enough
 Scenario: full class 
 	Given The user chose the class 
 	And The number of student more than 25 
-	Then the show masseg2 ("fall class ").
->>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem.git
+	Then the show masseg2 ("full class ").

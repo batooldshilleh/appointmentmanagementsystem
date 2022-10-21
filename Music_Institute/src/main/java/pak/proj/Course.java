@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 
-import softw1.*;
+import pak.proj.*;
 
 
 public class Course {

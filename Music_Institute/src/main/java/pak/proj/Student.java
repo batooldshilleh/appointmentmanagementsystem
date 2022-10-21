@@ -11,16 +11,23 @@ public class Student {
 	
 	
 	    private String name;
-	    public static List<Course> Course1 ;
+	    public static List<corse> Course1= new ArrayList<corse>() ;
 		protected final int maxCourses = 4;
+		public boolean sucss;
 		
-	    public Student( String name, ArrayList<Course> Course1){  
+	    public Student( String name, ArrayList<corse> Course1){  
 	        this.name = name;
 	        this.Course1= Course1;
 	    }
 	    
 	    
-	    public String getstudentName(){
+	    public Student() {
+			// TODO Auto-generated constructor stub
+	    	Student.Course1.add(new corse(1,"playing violin",200,10));
+		}
+
+
+		public String getstudentName(){
 	        return this.name;
 	    }
 	    public void setstudentName(String Name){
@@ -28,29 +35,55 @@ public class Student {
 	    }
 	  
 	  
-	    public boolean addco(Course Course){
+	    public boolean addco(corse Course){
 
 			if (!Course1.contains(Course)){
 				Course1.add(Course);
 				return true;
 			}
 			return false;
+		}
+
+
+		public void Sucsses(boolean b) {
+			// TODO Auto-generated method stub
+			this.sucss = b ;
+		}
+
+
+		public boolean getsucss() {
+			// TODO Auto-generated method stub
+			return sucss;
+		}
+
+
+		public int itsRegest(int n) {
+			// TODO Auto-generated method stub
+			
+			int c = 0;
+			for (int i = 0;i<Course1.size();i++) {
+				if (((corse) Course1.get(i)).getCN() == n) {
+					c = Course1.get(i).getCN();
+					break;
+				}
+			}
+			return c;
+		}
+
+
+		public void addcorse(int cn) {
+			// TODO Auto-generated method stub
+			corse c = new corse();
+			c.corseinfo(cn);
+			int con =c.getCN();
+			String n = c.getcorsename();
+			int p =c.getprice();
+			int sn =c.getnos();
+			Student.Course1.add(new corse(con,n,p,sn));
+			
 		}  
 	
 	
-	
-	    
-//	    public boolean dropCourse(Course course) { 
-//			if (course.removeStudent(Student)) {
-//				for(int i=0; i<courses.length; i++) {
-//					if(courses[i] == course)
-//						courses[i] = null;
-//				}
-//				numCoursesEnrolled--;
-//				return true;
-//			}
-//			else return false;
-//		}
 	
 	
 }
