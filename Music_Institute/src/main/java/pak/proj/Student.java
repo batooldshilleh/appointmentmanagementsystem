@@ -74,11 +74,10 @@ public class Student {
 		public void addcorse(int cn) {
 			// TODO Auto-generated method stub
 			corse c = new corse();
-			c.corseinfo(cn);
-			int con =c.getCN();
-			String n = c.getcorsename();
-			int p =c.getprice();
-			int sn =c.getnos();
+			String n=c.corseinfo(cn).getcorsename();
+			int con =c.corseinfo(cn).getCN();
+			int p =c.corseinfo(cn).getprice();
+			int sn =c.corseinfo(cn).getnos();
 			Student.Course1.add(new corse(con,n,p,sn));
 			
 		}  

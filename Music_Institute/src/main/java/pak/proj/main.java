@@ -67,25 +67,30 @@ public class main {
     	
     	if ( ch == 2) {
     		
+    		int cn ;
+    				
 	    	for(int i =1 ; i<7; i++) {
 	    		
 	    		logger.log(Level.INFO,c.corseinfo(i).getcorsename());
 	    		
 	    	}
-
-	    	if(c.corseinfo(ch).getnos()==25) {
+	    	
+	    	cn = scanner.nextInt();
+            
+	    	
+	    	if(c.corseinfo(cn).getnos()==25) {
 	    		
 	    		logger.log(Level.INFO,"full");
 	    		
 	    	}
 
-	    	if(s.itsRegest(ch) == ch) {
+	    	if(s.itsRegest(cn) == cn) {
 	    		
 	    		logger.log(Level.INFO,"you are rigest");
 	    		
 	    	}
 	    	
-	    	else if(ch==0) {
+	    	else if(cn==0) {
 	    		
 	    		System.exit(1);
 	    		
@@ -93,11 +98,11 @@ public class main {
 	    	
 	    	else {
 	    		
-	    		s.addcorse(ch);
+	    		s.addcorse(cn);
 	    		
 	    		}
-	    	
-    	}
+	    	}
+    	
     	
     	 else if (ch == 1 ) {
     		 logger.log(Level.INFO,"there is your corse");
@@ -112,8 +117,7 @@ public class main {
     }
     
     public static void techar_choise(int ch) {
-    	
-       	
+ 	
     	if ( ch == 1) {
     		
     		logger.log(Level.INFO,"techar luc");

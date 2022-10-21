@@ -64,16 +64,17 @@ public class corse {
 		}
 
 	
-	 public corse corseinfo(int inp) {
-	    	corse c = new corse();
-			for (int i = 0;i<corses.size();i++) {
-				if (corses.get(i).getCN() == inp) {
-					c = corses.get(i);
-					break;
+	
+		  public corse corseinfo(int inp) {
+		    	corse c = new corse();
+				for (int i = 0;i<corses.size();i++) {
+					if (corses.get(i).getCN() == inp) {
+						c = corses.get(i);
+						break;
+					}
 				}
-			}
-			return c;
-	    }
+				return c;
+		    }
 	
 
 }
