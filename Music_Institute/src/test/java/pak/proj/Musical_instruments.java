@@ -9,10 +9,10 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import softw1.*;
+import pak.proj.*;
 
 public class Musical_instruments {
-users u=new users();
+user u=new user();
 
 Musical_instruments1 m =new Musical_instruments1();
 static Logger logger

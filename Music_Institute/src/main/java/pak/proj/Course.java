@@ -9,6 +9,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+<<<<<<< HEAD
+=======
+import pak.proj.*;
+>>>>>>> branch 'master' of https://github.com/batooldshilleh/appointmentmanagementsystem
 
 
 public class Course {
