@@ -27,19 +27,25 @@ public class schedule_Test {
 	    if(s.itsRegest(cn)==cn){
 	    	s.Sucsses(true);
 	    	s.addcorse(cn);
+	    	c.incstudantNumber(cn);
+	    	assertTrue(s.getsucss());
 	    }
-	    assertTrue(s.getsucss());
+	    
 	}
 
 	@Given("The premium paid is sufficient")
-	public void the_premium_paid_is_sufficient() {
+	public void the_premium_paid_is_sufficient(String un) {
 	    // Write code here that turns the phrase above into concrete actions
+	    if(s.haveinofmony(un)) 
+	    	assertFalse(false);
 	    
 	}
 
 	@Given("Number of studint in class less than {int}")
 	public void number_of_studint_in_class_less_than(Integer int1) {
 	    // Write code here that turns the phrase above into concrete actions
+	   if (c.corseinfo(int1).getnos() < 25) 
+		   assertTrue(true);
 	   
 	}
 

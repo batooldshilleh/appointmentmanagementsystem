@@ -9,12 +9,12 @@ public class Student {
 
 	static Logger logger = Logger.getLogger(Student.class.getName());
 	
-	
+	    user u = new user();
 	    private String name;
 	    public static List<corse> Course1= new ArrayList<corse>() ;
 		protected final int maxCourses = 4;
 		public boolean sucss;
-		
+		public int amontofmony;
 	    public Student( String name, ArrayList<corse> Course1){  
 	        this.name = name;
 	        this.Course1= Course1;
@@ -53,6 +53,7 @@ public class Student {
 
 		public boolean getsucss() {
 			// TODO Auto-generated method stub
+			
 			return sucss;
 		}
 
@@ -80,6 +81,20 @@ public class Student {
 			int sn =c.corseinfo(cn).getnos();
 			Student.Course1.add(new corse(con,n,p,sn));
 			
+		}
+
+
+		public boolean haveinofmony(String un) {
+			
+			int n = u.userinfo(name).getaom();
+			n--;
+			// TODO Auto-generated method stub
+			if(n != 0) {
+				return false;
+			}
+			else{
+				return true;
+			}
 		}  
 	
 	

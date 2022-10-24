@@ -99,6 +99,9 @@ public class main {
 	    	else {
 	    		
 	    		s.addcorse(cn);
+	    		c.incstudantNumber(cn);
+	    		s.haveinofmony(inp);
+	    		s.Sucsses(true);
 	    		
 	    		}
 	    	}

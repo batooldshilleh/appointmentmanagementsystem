@@ -17,7 +17,7 @@ public class corse {
     	corse.corses.add(new corse(2,"playing guitar",200,15));
     	corse.corses.add(new corse(3,"Piano Playing",300,14));
     	corse.corses.add(new corse(4,"Fundamentals of musicology",200,15));	
-    	corse.corses.add(new corse(5,"musical dictation",200,15));
+    	corse.corses.add(new corse(5,"musical dictation",200,24));
     	corse.corses.add(new corse(6,"Singing principles",200,25));
     	
     }
@@ -75,6 +75,16 @@ public class corse {
 				}
 				return c;
 		    }
+		public void incstudantNumber(int cn) {
+			// TODO Auto-generated method stub
+			
+			corse c = new corse();
+			
+			int n = c.corseinfo(cn).NumberOfStudent;
+			n++;
+			System.out.println(n);
+			
+		}
 	
 
 }
