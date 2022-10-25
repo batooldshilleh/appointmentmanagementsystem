@@ -146,6 +146,15 @@ public class user {
 	    public boolean istybeEqual(String type){
 	        return this.Type.toLowerCase().equals(type);
 	    }
+
+		public boolean isRegest(String string) {
+			// TODO Auto-generated method stub
+			for (int i = 0 ; i<users1.size();i++) {
+				if (users1.get(i).getusername().equals(string))
+					return true;
+			}
+			return false;
+		}
 	
 	
 

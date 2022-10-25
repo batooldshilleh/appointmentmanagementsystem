@@ -11,7 +11,7 @@ public class main {
     static Logger logger
    = Logger.getLogger(main.class.getName());
     
-     static String inp, inp2;
+     static String inp, inp2,inp3;
 	
 	 static boolean isValid = false;
 	 
@@ -52,6 +52,7 @@ public class main {
 		    			+ "2- Course List"
 		    			+ "\n"
 		    			+ "3- Events"
+		    			+ "\n"
 		    			+ "4- prss any key to logout"); 
 		    	
 		    	int ch =scanner.nextInt();
@@ -136,9 +137,9 @@ public class main {
     	 }
     }
     
-	public static void main(String[] args) {
-		
-		logger.log(Level.INFO,"welcome\n");
+    public static void login() {
+    	
+    	logger.log(Level.INFO,"welcome\n");
 		
 		logger.log(Level.INFO,"enter your name\n");
 		
@@ -147,6 +148,8 @@ public class main {
 		logger.log(Level.INFO,"enter the password\n");
 		
 		inp2=scanner.next();
+		
+		chikeuserType();
 		
 		for(;;) {
 			
@@ -191,6 +194,51 @@ public class main {
  
 			    
 		}
+	
+    }
+    
+    public static void reg_or_log(int ch) {
+    	
+    	if(ch == 1) {
+    		logger.log(Level.INFO,"enter your name\n");
+    		
+    		inp = scanner.next();
+    		
+    		logger.log(Level.INFO,"enter the password\n");
+    		
+    		inp2=scanner.next();
+    		
+    		logger.log(Level.INFO,"enter the your type\n");
+    		
+    		inp3=scanner.next();
+    		
+    		if(admin.isRegest(inp)) {
+    			logger.log(Level.INFO,"go to login you are regist\n");
+    			login();
+    		}
+    		
+    		else {
+    			
+    		admin.setUsrname(inp);
+    		admin.setPass(inp2);
+    		admin.setType(inp3);
+    			login();
+    		}
+    	}
+    	else {
+    		login();
+    	}
+    	
+    	
+    }
+    
+	public static void main(String[] args) {
+		logger.log(Level.INFO,
+				"\n"+
+				"1- Register \n"
+    			+ "2- login");
+		int usch = scanner.nextInt();
+		reg_or_log(usch);
 
 	}
 
