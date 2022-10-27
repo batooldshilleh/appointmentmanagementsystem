@@ -16,6 +16,6 @@ This is a music institute management system that manages the relationship betwee
    <br>
    <br>
 ⭐*logout process:*<br>
-   🌠When you choose to log out, the program will stop   <br>
+   🌠When you choose to log out ➡ the program will stop   <br>
    <br>
    <br>
