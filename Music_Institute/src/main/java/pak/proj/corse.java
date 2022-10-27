@@ -64,18 +64,20 @@ public class corse {
 		}
 
 	
-	
-		  public corse corseinfo(int inp) {
-		    	corse c = new corse();
-				for (int i = 0;i<corses.size();i++) {
-					if (corses.get(i).getCN() == inp) {
-						c = corses.get(i);
-						break;
-					}
+	 public corse corseinfo(int inp) {
+	    	corse c = new corse();
+			for (int i = 0;i<corses.size();i++) {
+				if (corses.get(i).getCN() == inp) {
+					c = corses.get(i);
+					break;
 				}
+			 }
+
 				return c;
-		    }
-		public void incstudantNumber(int cn) {
+		   
+	 }
+			
+		public corse incstudantNumber(int cn) {
 			// TODO Auto-generated method stub
 			
 			corse c = new corse();
@@ -84,7 +86,9 @@ public class corse {
 			n++;
 			System.out.println(n);
 			
-		}
+			return c;
+	    }
+
 	
 
 }

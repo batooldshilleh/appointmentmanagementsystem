@@ -23,47 +23,10 @@ public class main {
 	
 	static Student s = new Student();
 	
-	static calendar cc = new calendar();
+	static Musical_instruments1 m = new Musical_instruments1() ;
 	
-    public static void chikeuserType(){
- 
-    	while (true) {
-    		
-    	 if(admin.isTechar(admin.getType())) {
-    		 
-    		 logger.log(Level.INFO,
-    				 	"\n "
-		    			+ "1- my lectures"
-		    			+ "\n "
-		    			+ "2- Appointment Reservation"
-		    			+ "\n "
-		    			+ "3- prss any key to logout");
-    		 
-    		 int ch =scanner.nextInt();
-    		 techar_choise( ch);
-		    		}
-    	   
-		    else {
-		    	
-		    	logger.log(Level.INFO,
-		    			"\n"
-		    			+ "1- my lectures"
-		    			+ "\n"
-		    			+ "2- Course List"
-		    			+ "\n"
-		    			+ "3- Events"
-		    			+ "\n"
-		    			+ "4- prss any key to logout"); 
-		    	
-		    	int ch =scanner.nextInt();
-		    	
-		    	student_choise(ch);
-		    	
-		    	}
-		    	
-    	       }
-		    }
-    
+	//static calendar cc = new calendar();
+	
     public static void student_choise(int ch) {
     	
     	if ( ch == 2) {
@@ -97,6 +60,8 @@ public class main {
 	    		
 	    	}
 	    	
+	    	
+	    	
 	    	else {
 	    		
 	    		s.addcorse(cn);
@@ -115,6 +80,10 @@ public class main {
     	 else if(ch == 3) {
     		 logger.log(Level.INFO,"event");
     	 }
+    	
+    	 else if (ch == 4) {
+    		 m.printinfo();
+    	 }
     	 else {
     		 System.exit(1);
     	 }
@@ -128,11 +97,12 @@ public class main {
 	    	
     	}
     	
-    	 else if (ch == 2 ) {
-    		 cc.fun();
+    	else if(ch==2) {}
+    	 else if (ch == 3 ) {
+    		 m.printinfo();
     	}
     	
-    	 else {
+    	 else if (ch==0) {
     		 System.exit(1);
     	 }
     }
@@ -148,8 +118,6 @@ public class main {
 		logger.log(Level.INFO,"enter the password\n");
 		
 		inp2=scanner.next();
-		
-		chikeuserType();
 		
 		for(;;) {
 			
@@ -179,8 +147,51 @@ public class main {
 			if(isValid) {
 				
 				logger.log(Level.INFO,"HI");
-				
-			    chikeuserType();
+				admin= admin.userinfo(inp);
+		    	while (true) {
+		    		
+		    		boolean t=admin.isTechar(admin.getType());
+		    		
+		    	 if(t) {
+		    		 
+		    		 logger.log(Level.INFO,
+		    				 	"\n "	
+						    	+ "0- logout"
+						    	+ "\n "
+				    			+ "1- my lectures"
+				    			+ "\n "
+				    			+ "2- Appointment Reservation"
+				    			+ "\n "
+				    			+ "3- Show Musical Instruments "
+				    			);
+		    		 
+		    		 int ch =scanner.nextInt();
+		    		 techar_choise( ch);
+				    		}
+		    	   
+				    else {
+				    	
+				    	logger.log(Level.INFO,
+				    			"\n"
+				    			+ "0- logout"
+								+ "\n "
+				    			+ "1- my lectures"
+				    			+ "\n"
+				    			+ "2- Course List"
+				    			+ "\n"
+				    			+ "3- Events"
+				    			+ "\n"
+				    			+ "4- Show Musical Instruments "
+				    			+ "\n "
+				    			+ "5- logout"); 
+				    	
+				    	int ch =scanner.nextInt();
+				    	
+				    	student_choise(ch);
+				    	
+				    	}
+				    	
+		    	       }
 			   
 			    }
 			
@@ -225,7 +236,7 @@ public class main {
     			login();
     		}
     	}
-    	else {
+    	else if (ch==2) {
     		login();
     	}
     	
