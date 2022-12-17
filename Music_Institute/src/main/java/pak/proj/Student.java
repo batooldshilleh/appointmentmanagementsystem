@@ -97,7 +97,17 @@ public class Student {
 			}
 		}  
 	
+	    public boolean corsinfo(int inp) {
+	    	boolean b =false ;
+			for (int i = 0;i<Course1.size();i++) {
+				if (Course1.get(i).getCN()==inp) {
+					b = true;
+					break;
+				}
+				else b = false;
+			}
+			return b;
+	    
 	
-	
-	
+	    }
 }

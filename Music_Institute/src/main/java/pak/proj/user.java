@@ -17,7 +17,8 @@ public class user {
   	static boolean m;
   	public int amontofmony;
   	public static List<user> users1 =new ArrayList<user>();
-   
+  	public static List<String> commint =new ArrayList<String>();
+  	
     public user(){
     	user.users1.add(new user("batool","123","t"));
 		user.users1.add(new user("manar","1234s","t"));
@@ -155,8 +156,19 @@ public class user {
 			}
 			return false;
 		}
+		
+		
+		  public void note(String commint) {
+
+
+		    	user.commint.add(commint+"\n");	
+		    }
 	
-	
+		  public void noteshow() {
+			  for (int i = 0 ; i<commint.size();i++) {
+				  logger.log(Level.INFO,commint.get(i));
+			  }
+		  }
 
 	
 	

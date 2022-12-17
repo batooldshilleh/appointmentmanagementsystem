@@ -13,45 +13,27 @@ Given the table of artical
 
 @tag1
 Scenario: successful course registration
-	And   There is no conflict
-	And The premium paid is sufficient
-	And Number of studint in class less than the max
-	Then the article is registered
+	And   There is no conflict with 1
+	And The premium paid is sufficient "80"
+	And Number of studint in class less than the max 1
+	Then the article is registered 5
 	
 @tag2
 Scenario: conflict 
-	And There is conflict
+	And There is conflict with 1
 	Then the show masseg ("there is conflict ")
 	
 	@tag3
 Scenario: premium paid not enough
-	And The premium paid not enough
+	And The premium paid not enough less "20"
 	Then the show masseg1 ("the premium paid not enough ")
 	
 @tag4
 Scenario: full class  
 	And The number of student more than 25 
 	Then the show masseg ("full class ").
-	Given The user chose the class 
-	And   There is no conflict
-	And The premium paid is sufficient
-	And Number of studint in class less than 25
-	Then the article is registered
+	 
 	
-@tag2
-Scenario: conflict 
-	Given The user chose the class 
-	And There is conflict
-	Then the show masseg ("there is conflict ")
+
 	
-	@tag3
-Scenario: premium paid not enough
-	Given The user chose the class 
-	And The premium paid not enough
-	Then the show masseg1 ("the premium paid not enough ")
-	
-@tag4
-Scenario: full class 
-	Given The user chose the class 
-	And The number of student more than 25 
-	Then the show masseg2 ("full class ").
+

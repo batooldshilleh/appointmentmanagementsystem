@@ -1,4 +1,4 @@
-/*package pak.proj;
+package pak.proj;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,12 +8,12 @@ import java.util.logging.Logger;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import softw1.*;
+
 
 public class note {
 	 static Logger logger
 	   = Logger.getLogger(note.class.getName());
-	users u=new users();
+	user u=new user();
 	String msg="thanks";
 	@Given("that the user is logged in")
 	public void that_the_user_is_logged_in() {
@@ -55,4 +55,4 @@ public class note {
 	
 	
 	
-}*/
+}

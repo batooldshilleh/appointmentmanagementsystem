@@ -1,4 +1,4 @@
-package pak.proj;
+/*package pak.proj;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +24,8 @@ public class main {
 	static Student s = new Student();
 	
 	static Musical_instruments1 m = new Musical_instruments1() ;
+	
+	static about a = new about();
 	
 	//static calendar cc = new calendar();
 	
@@ -84,8 +86,18 @@ public class main {
     	 else if (ch == 4) {
     		 m.printinfo();
     	 }
-    	 else {
+    	 else if (ch==0) {
     		 System.exit(1);
+    	 }
+    	 else if(ch == 5) {
+    		 logger.log(Level.INFO,"Enter your comment");
+    		 String com =scanner.next();;
+    		 
+    		 admin.note(com);
+    	 }
+    	
+    	 else if(ch==6) {
+    		 a.printall();
     	 }
     }
     
@@ -104,6 +116,9 @@ public class main {
     	
     	 else if (ch==0) {
     		 System.exit(1);
+    	 }
+    	 else if(ch==4) {
+    		 admin.noteshow();
     	 }
     }
     
@@ -157,12 +172,14 @@ public class main {
 		    		 logger.log(Level.INFO,
 		    				 	"\n "	
 						    	+ "0- logout"
-						    	+ "\n "
+						    	+ "\n"
 				    			+ "1- my lectures"
-				    			+ "\n "
+				    			+ "\n"
 				    			+ "2- Appointment Reservation"
-				    			+ "\n "
+				    			+ "\n"
 				    			+ "3- Show Musical Instruments "
+				    			+ "\n"
+				    			+ "4- Show commint"
 				    			);
 		    		 
 		    		 int ch =scanner.nextInt();
@@ -183,7 +200,9 @@ public class main {
 				    			+ "\n"
 				    			+ "4- Show Musical Instruments "
 				    			+ "\n "
-				    			+ "5- logout"); 
+				    			+ "5- add comint"
+				    			+ "\n "
+				    			+ "6- about team"); 
 				    	
 				    	int ch =scanner.nextInt();
 				    	
@@ -253,4 +272,4 @@ public class main {
 
 	}
 
-}
+}*/
