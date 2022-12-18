@@ -7,26 +7,28 @@
 	import java.util.logging.Level;
 	import java.util.logging.Logger;
 
-	public class calendar 
+	public class Calender 
 	{
 
-		corse c;
+		
 		 static Logger logger
-		   = Logger.getLogger(calendar.class.getName());
-		 boolean v=true,book;
-		public calendar() {
-			
+		   = Logger.getLogger(Calender.class.getName());
+		 boolean v;
+		 boolean book;
+		public Calender() {
+			v = true;
 			
 		}
+	@SuppressWarnings("unlikely-arg-type")
 	public boolean booking (Date start,Date end,String time) throws ParseException {
 		
-		for(int i=0;i<c.corses.size();i++) {
-			String date1=c.corses.get(3).toString();//start
-			String date2=c.corses.get(4).toString();//end
+		for(int i=0;i<Corse.corses.size();i++) {
+			String date1=Corse.corses.get(3).toString();
+			String date2=Corse.corses.get(4).toString();//end
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy", Locale.ENGLISH);
 	        Date date3 = formatter.parse(date1);
 	        Date date4 = formatter.parse(date2);
-	        if (date3.after(start)||date4.before(end)||start.equals(date3)||end.equals(date4)||(time.equals(c.corses.get(5))))	
+	        if (date3.after(start)||date4.before(end)||start.equals(date3)||end.equals(date4)||(time.equals(Corse.corses.get(5))))	
 	        {	
 
 	        	logger.log(Level.INFO,"choose anther date or time\n");

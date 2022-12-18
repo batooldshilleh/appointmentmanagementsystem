@@ -3,18 +3,15 @@ package pak.proj;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeFalse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pak.proj.*;
 
 public class Musical_instruments {
-user u=new user();
+User u=new User();
 
-Musical_instruments1 m =new Musical_instruments1();
+MusicalInstruments1 m =new MusicalInstruments1();
 static Logger logger
 = Logger.getLogger(Musical_instruments.class.getName());
 

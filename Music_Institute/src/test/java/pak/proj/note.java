@@ -13,7 +13,7 @@ import io.cucumber.java.en.Then;
 public class note {
 	 static Logger logger
 	   = Logger.getLogger(note.class.getName());
-	user u=new user();
+	User u=new User();
 	String msg="thanks";
 	@Given("that the user is logged in")
 	public void that_the_user_is_logged_in() {

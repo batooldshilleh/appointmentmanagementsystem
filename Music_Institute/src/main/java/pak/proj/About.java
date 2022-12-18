@@ -3,11 +3,11 @@ package pak.proj;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class about {
+public class About {
 	boolean ab;
 	
 	static Logger logger
-	= Logger.getLogger(about.class.getName());
+	= Logger.getLogger(About.class.getName());
 	
 public void setinst(boolean l) {
 		
@@ -15,7 +15,7 @@ public void setinst(boolean l) {
 	}
 
 	public boolean getsto() {
-		// TODO Auto-generated method stub
+		
 		return ab;
 	}
 

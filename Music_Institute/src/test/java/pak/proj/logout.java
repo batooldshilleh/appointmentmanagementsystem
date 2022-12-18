@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 public class logout {
 
 	
-	user u =new user();
+	User u =new User();
 	@Given("that the user is logged_in")
 	public void that_the_user_is_logged_in() {
 	    if (u.getLogstat()== true)

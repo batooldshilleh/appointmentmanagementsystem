@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 //import  pak.proj.main;
-import pak.proj.user;
+import pak.proj.User;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -16,7 +16,7 @@ import java.util.logging.Level;
 
 
 public class Test_login {
-	 user u = new user();
+	 User u = new User();
 	 
 	 static Logger logger
 	   = Logger.getLogger(Test_login.class.getName());
@@ -49,7 +49,7 @@ public class Test_login {
 	@Given("{string} is not in the database")
 	public void is_not_in_the_database(String string) {
 	   
-		if (!user.users1.equals(string)) {
+		if (!User.users1.equals(string)) {
 			 
 			 u.setLogstat(false);
 		}
@@ -66,7 +66,7 @@ public class Test_login {
 
 	@Given("the {string} not in database")
 	public void the_not_in_database(String string) {
-		if (!user.users1.equals(string)) {
+		if (!User.users1.equals(string)) {
 			 
 			 u.setLogstat(false);
 		}

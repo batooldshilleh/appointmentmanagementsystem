@@ -6,45 +6,45 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class user {
+public class User {
 	
-	 static Logger logger = Logger.getLogger(user.class.getName());
+	 static Logger logger = Logger.getLogger(User.class.getName());
 	String password;
 	String username;
-	String Type;
+	String type;
     private boolean logged;
   	static boolean n;
   	static boolean m;
-  	public int amontofmony;
-  	public static List<user> users1 =new ArrayList<user>();
-  	public static List<String> commint =new ArrayList<String>();
+  	protected static int amontofmony ;
+  	protected static List<User> users1 =new ArrayList<User>();
+  	protected static List<String> commint =new ArrayList<String>();
   	
-    public user(){
-    	user.users1.add(new user("batool","123","t"));
-		user.users1.add(new user("manar","1234s","t"));
-		user.users1.add(new user("ahmad","1234","s",500));
-		user.users1.add(new user("saja","1234","s",600));	
+    public User(){
+    	User.users1.add(new User("batool","123","t"));
+		User.users1.add(new User("manar","1234s","t"));
+		User.users1.add(new User("ahmad","1234","s",500));
+		User.users1.add(new User("saja","1234","s",600));	
     	
     }
   
-    public user(String name, String pass,String type,int i){
+    public User(String name, String pass,String type,int i){
     	this.username=(name);
     	this.password=(pass);
-        this.Type=(type);
-        this.amontofmony=i;
+        this.type=(type);
+        User.amontofmony=i;
 
     	
     }
-    public user(String name, String pass,String type){
+    public User(String name, String pass,String type){
     	this.username=(name);
     	this.password=(pass);
-        this.Type=(type);
+        this.type=(type);
        
     }
    
 	public void setType(String string) {
 		
-		this.Type = string;
+		this.type = string;
 	}
     
 	public void setLogstat(boolean l) {
@@ -67,9 +67,9 @@ public class user {
 		this.password= string2;
 	}
 	
-	public void setamontofmony(int string2) {
+	public static void setamontofmony(int string2) {
 		
-		this.amontofmony= string2;
+		User.amontofmony= string2;
 	}
 	
 	
@@ -104,11 +104,11 @@ public class user {
 	}
 	
 	public String getType() {
-		return Type;
+		return type;
 	}
 	
-	public static void adduser(user l) {
-	user u =new user();
+	public static void adduser(User l) {
+	User u =new User();
 		if(u.getLogstat())
 		{
 			users1.add(l);
@@ -129,11 +129,11 @@ public class user {
 
 	    
 	    public boolean isTechar(String ut) {
-	    	return ut.toLowerCase().equals("t");
+	    	return ut.toLowerCase().equalsIgnoreCase("t");
 	    }
 	    
-	    public user userinfo(String inp) {
-	    	user b = new user();
+	    public User userinfo(String inp) {
+	    	User b = new User();
 			for (int i = 0;i<users1.size();i++) {
 				if (users1.get(i).getusername().equals(inp)) {
 					b = users1.get(i);
@@ -145,11 +145,11 @@ public class user {
 
 	
 	    public boolean istybeEqual(String type){
-	        return this.Type.toLowerCase().equals(type);
+	        return this.type.toLowerCase().equals(type);
 	    }
 
 		public boolean isRegest(String string) {
-			// TODO Auto-generated method stub
+			
 			for (int i = 0 ; i<users1.size();i++) {
 				if (users1.get(i).getusername().equals(string))
 					return true;
@@ -161,7 +161,7 @@ public class user {
 		  public void note(String commint) {
 
 
-		    	user.commint.add(commint+"\n");	
+		    	User.commint.add(commint+"\n");	
 		    }
 	
 		  public void noteshow() {

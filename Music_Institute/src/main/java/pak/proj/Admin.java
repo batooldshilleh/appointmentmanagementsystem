@@ -11,14 +11,11 @@ public class Admin {
         = Logger.getLogger(Admin.class.getName());
 	    
 	public void setLogged(boolean b) {
-		// TODO Auto-generated method stub
+		
 		this.logged = b;
 	}
 
-	private void setPass(String string) {
-		// TODO Auto-generated method stub
-		this.pass = string;
-	}
+
 	
 	public boolean getLogged() {
     	return logged;

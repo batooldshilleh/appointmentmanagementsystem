@@ -10,10 +10,10 @@ import static org.junit.Assert.assertTrue;
 import java.util.logging.Level;
 
 public class booking {
-user u=new user();
-calendar c =new calendar();
+User u=new User();
+Calender c =new Calender();
 static Logger logger
-= Logger.getLogger(calendar.class.getName());
+= Logger.getLogger(Calender.class.getName());
 
 @Given("teacher is looged in")
 public void teacher_is_looged_in() {

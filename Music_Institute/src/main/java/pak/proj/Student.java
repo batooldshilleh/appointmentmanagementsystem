@@ -2,69 +2,68 @@ package pak.proj;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import pak.proj.*;
+
+
 public class Student {
 
-	static Logger logger = Logger.getLogger(Student.class.getName());
+
 	
-	    user u = new user();
+	    User u = new User();
 	    private String name;
-	    public static List<corse> Course1= new ArrayList<corse>() ;
-		protected final int maxCourses = 4;
-		public boolean sucss;
-		public int amontofmony;
-	    public Student( String name, ArrayList<corse> Course1){  
+	    protected static  List<Corse> coursee= new ArrayList<Corse>() ;
+		protected static final  int MAXCOURSES = 4;
+		protected boolean sucss;
+		protected int amontofmony;
+	    public Student(String name){  
 	        this.name = name;
-	        this.Course1= Course1;
+	        
 	    }
 	    
 	    
 	    public Student() {
-			// TODO Auto-generated constructor stub
-	    	Student.Course1.add(new corse(1,"playing violin",200,10));
+			
+	    	Student.coursee.add(new Corse(1,"playing violin",200,10));
 		}
 
 
 		public String getstudentName(){
 	        return this.name;
 	    }
-	    public void setstudentName(String Name){
-	        this.name = Name;
+	    public void setstudentName(String names){
+	        this.name = names;
 	    }
 	  
 	  
-	    public boolean addco(corse Course){
+	    public boolean addco(Corse courses){
 
-			if (!Course1.contains(Course)){
-				Course1.add(Course);
+			if (!coursee.contains(courses)){
+				coursee.add(courses);
 				return true;
 			}
 			return false;
 		}
 
 
-		public void Sucsses(boolean b) {
-			// TODO Auto-generated method stub
+		public void sucsses(boolean b) {
+		
 			this.sucss = b ;
 		}
 
 
 		public boolean getsucss() {
-			// TODO Auto-generated method stub
+		
 			
 			return sucss;
 		}
 
 
 		public int itsRegest(int n) {
-			// TODO Auto-generated method stub
+		
 			
 			int c = 0;
-			for (int i = 0;i<Course1.size();i++) {
-				if (((corse) Course1.get(i)).getCN() == n) {
-					c = Course1.get(i).getCN();
+			for (int i = 0;i<coursee.size();i++) {
+				if ((coursee.get(i)).getCN() == n) {
+					c = coursee.get(i).getCN();
 					break;
 				}
 			}
@@ -73,34 +72,32 @@ public class Student {
 
 
 		public void addcorse(int cn) {
-			// TODO Auto-generated method stub
-			corse c = new corse();
+	
+			Corse c = new Corse();
 			String n=c.corseinfo(cn).getcorsename();
 			int con =c.corseinfo(cn).getCN();
 			int p =c.corseinfo(cn).getprice();
 			int sn =c.corseinfo(cn).getnos();
-			Student.Course1.add(new corse(con,n,p,sn));
+			Student.coursee.add(new Corse(con,n,p,sn));
 			
 		}
 
 
-		public boolean haveinofmony(String un) {
+		public boolean haveinofmony() {
 			
 			int n = u.userinfo(name).getaom();
 			n--;
-			// TODO Auto-generated method stub
+		    boolean falg = true;
 			if(n != 0) {
-				return false;
+				falg = false;
 			}
-			else{
-				return true;
-			}
+			return falg;
 		}  
 	
 	    public boolean corsinfo(int inp) {
 	    	boolean b =false ;
-			for (int i = 0;i<Course1.size();i++) {
-				if (Course1.get(i).getCN()==inp) {
+			for (int i = 0;i<coursee.size();i++) {
+				if (coursee.get(i).getCN()==inp) {
 					b = true;
 					break;
 				}

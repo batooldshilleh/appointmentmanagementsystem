@@ -10,15 +10,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class success_stories {
-	user u = new user();
-	about s = new about();
+	User u = new User();
+	About s = new About();
 	static Logger logger
 	= Logger.getLogger(Musical_instruments.class.getName());
 
 	
 	@Given("they chose the  success stories")
 	public void they_chose_the_success_stories() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 		if(s.getsto()==true)
 			 assertTrue(s.getsto());
 		 else
@@ -27,7 +27,7 @@ public class success_stories {
 
 	@Then("A list of  success stories, , will appear")
 	public void a_list_of_success_stories_will_appear() {
-	    // Write code here that turns the phrase above into concrete actions
+	    
 		logger.log(Level.INFO,"the list was appear");
 	}
 }
