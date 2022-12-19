@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>appointment-management-system </groupId>
+  <artifactId>Music_Institute</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+	<maven.compiler.source>6</maven.compiler.source>
+	<maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+  
+   <dependencies>
+  
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-picocontainer</artifactId>
+		<version>7.3.4</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-java</artifactId>
+		<version>7.3.4</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-core</artifactId>
+		<version>7.3.4</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-junit</artifactId>
+		<version>7.3.4</version>
+		<scope>test</scope>
+	</dependency>
+	
+  <dependency>
+    <groupId>org.swinglabs</groupId>
+    <artifactId>swingx</artifactId>
+    <version>1.6</version>
+  </dependency>
+   
+  <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>jakarta.mail</artifactId>
+    <version>2.0.1</version>
+  </dependency>
+
+  <dependency>
+	<groupId>org.sonarsource.scanner.maven</groupId>
+	<artifactId>sonar-maven-plugin</artifactId>
+	<version>3.9.1.2184</version>
+   </dependency>
+   
+  </dependencies>
+  
+  <build>
+	
+	<pluginManagement>
+	
+		<plugins>
+	
+	<!-- The Surefire Plugin is needed to run JUnit 5 tests with Maven -->
+	
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+				<configuration></configuration>
+			</plugin>
+	
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				
+				<executions>
+				  <execution>
+				
+				    <goals>
+				       <goal>prepare-agent</goal>
+				    </goals>
+				    </execution>
+						
+					<execution>
+					   <id>report</id>
+					   <phase>prepare-package</phase>
+					   <goals>
+						  <goal>report</goal>
+					   </goals>
+					</execution>
+				</executions>
+	
+			</plugin>
+				
+		</plugins>
+	
+  </pluginManagement>
+	
+</build>
+
+</project>
