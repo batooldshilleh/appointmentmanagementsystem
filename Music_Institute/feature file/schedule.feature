@@ -1,18 +1,11 @@
 Feature: schedule
 Create an appointment schedule
 
-Background:
-Given the table of artical
-|artical name|
-|playing violin|
-|Piano Playing|
-|playing guitar|
-|Fundamentals of musicology|
-|musical dictation|
-|Singing principles|
+
 
 @tag1
 Scenario: successful course registration
+  And chose corse 1,"c",200 and 10
 	And   There is no conflict with 1
 	And The premium paid is sufficient "80"
 	And Number of studint in class less than the max 1

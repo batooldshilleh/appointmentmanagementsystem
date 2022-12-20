@@ -29,8 +29,7 @@ public void printall() {
 			+ "Team manegar/n"
 			+ "batoolshilleh@gmail.com /n"
 			+ "https://github.com/batooldshilleh /n");
-	logger.log(Level.INFO,"Batool D Shilleh/n"
-			+ "Ahmad Rashed/n"
+	logger.log(Level.INFO, "Ahmad Rashed/n"
 			+ "ahmad2001@gmail.com /n"
 			+ "https://github.com/ahmadrasheedd/n");
 }

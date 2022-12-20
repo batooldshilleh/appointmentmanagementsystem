@@ -18,16 +18,15 @@ public class success_stories {
 	
 	@Given("they chose the  success stories")
 	public void they_chose_the_success_stories() {
-	    
+	    s.setinst(true);
 		if(s.getsto()==true)
 			 assertTrue(s.getsto());
-		 else
-			 assumeFalse(s.getsto());
+		 
 	}
 
 	@Then("A list of  success stories, , will appear")
 	public void a_list_of_success_stories_will_appear() {
-	    
+	    s.printall();
 		logger.log(Level.INFO,"the list was appear");
 	}
 }

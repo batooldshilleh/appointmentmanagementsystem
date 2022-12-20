@@ -15,21 +15,18 @@ public class SheduleTest {
 	Student s = new Student();
 	static Logger logger
 	   = Logger.getLogger(Test_login.class.getName());
-
-
-
-
-
-	@Given("the table of artical")
-	public void the_table_of_artical(io.cucumber.datatable.DataTable dataTable) {
-	  
-	   
+  
+	@Given("chose corse {int},{string},{int} and {int}")
+	public void chose_corse_and(Integer int1, String string, Integer int2, Integer int3) {
+	    c.setCN(int1);
+	    c.setCorsname(string);
+	    c.setPrice(int2);
+	    c.setNOS(int3);
 	}
-
 	@Given("There is no conflict with {int}")
 	public void there_is_no_conflict_with(Integer cn) {
 	    
-		   if(!s.corsinfo(cn)){
+		   if(s.corsinfo(cn)){
 		    	s.sucsses(true);
 		    	s.addcorse(cn);
 		    	c.incstudantNumber();
@@ -41,8 +38,8 @@ public class SheduleTest {
 	@Given("The premium paid is sufficient {string}")
 	public void the_premium_paid_is_sufficient(String un) {
 	    
-		 if(s.haveinofmony()) 
-    	assertFalse(false);
+		 if(!s.haveinofmony()) 
+    	   assertTrue(true);
 	   
 	}
 
@@ -57,8 +54,8 @@ public void number_of_studint_in_class_less_than_the_max(Integer int1) {
 
 @Then("the article is registered {int}")
 public void the_article_is_registered(Integer c) {
-    
-	 if(s.corsinfo(c)) {
+    boolean b = s.corsinfo(c);
+	 if(!b) {
 	 assertTrue(true);
 }
 
@@ -132,7 +129,7 @@ public void there_is_conflict_with(Integer c) {
 	@Given("The premium paid is sufficient the {string}")
 	public void the_premium_paid_is_sufficient_the(String un) {
 	    
-		 if(s.haveinofmony()) 
+		 if(!s.haveinofmony()) 
     	assertFalse(false);
 	
 	}
@@ -144,4 +141,3 @@ public void there_is_conflict_with(Integer c) {
 		
 	}
 }
-

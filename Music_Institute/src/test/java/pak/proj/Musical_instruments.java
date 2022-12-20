@@ -25,6 +25,7 @@ public void that_the_users_are_logged_in() {
 
 @Given("they chose the Musical Instruments")
 public void they_chose_the_musical_instruments() {
+	m.setinst(m.getinst());
  if(m.getinst()==true)
 	 assertTrue(m.getinst());
  else
@@ -35,7 +36,7 @@ public void they_chose_the_musical_instruments() {
 @Then("A list of where musical instruments are and there price, , will appear")
 public void a_list_of_where_musical_instruments_are_and_there_price_will_appear() {
 
-
+    m.printinfo();
 	logger.log(Level.INFO,"the list was appear");
 	
 }

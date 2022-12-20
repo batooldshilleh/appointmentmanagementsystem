@@ -15,6 +15,8 @@
 		   = Logger.getLogger(Calender.class.getName());
 		 boolean v;
 		 boolean book;
+		 String time;
+		 Date strt, end;
 		public Calender() {
 			v = true;
 			
@@ -24,11 +26,12 @@
 		
 		for(int i=0;i<Corse.corses.size();i++) {
 			String date1=Corse.corses.get(3).toString();
-			String date2=Corse.corses.get(4).toString();//end
+			String date2=Corse.corses.get(4).toString();
 			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy", Locale.ENGLISH);
 	        Date date3 = formatter.parse(date1);
 	        Date date4 = formatter.parse(date2);
-	        if (date3.after(start)||date4.before(end)||start.equals(date3)||end.equals(date4)||(time.equals(Corse.corses.get(5))))	
+	        
+	        if (date3.after(start)||date4.before(end)||start.equals(date3)||end.equals(date4))	
 	        {	
 
 	        	logger.log(Level.INFO,"choose anther date or time\n");
@@ -46,7 +49,7 @@
 		}
 		return v;
 	}
-
+    
 	public void setbookstat(boolean l) {
 		
 		this.book = l;
@@ -56,5 +59,6 @@
 		
 		return book;
 	}
-
+  
+	
 	}

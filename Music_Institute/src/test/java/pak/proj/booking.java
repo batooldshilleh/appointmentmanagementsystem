@@ -1,7 +1,8 @@
 package pak.proj;
 
 import java.util.logging.Logger;
-
+import java.text.ParseException;
+import java.util.Date;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,10 +24,12 @@ if(u.getLogstat()==true)
 
 @When("he choose a new Appointment")
 public void he_choose_a_new_appointment() {
+	c.setbookstat(true);
 	if(c.getbookstat()==true)
 		assertTrue(c.getbookstat());
 	
 }
+
 
 @When("there is no conflict with time")
 public void there_is_no_conflict_with_time() {
@@ -35,9 +38,10 @@ public void there_is_no_conflict_with_time() {
 	
 }
 
+
 @Then("The booking process was successful")
 public void the_booking_process_was_successful() {
-
+    c.setbookstat(true);
 	assert(true);
 }
 

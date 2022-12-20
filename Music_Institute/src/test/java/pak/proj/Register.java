@@ -13,7 +13,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Register {
-	Admin admin =new Admin();
+	
 	User u = new User();
 	boolean correct;
 	 List< User>un = new ArrayList<User>();
@@ -28,21 +28,20 @@ public class Register {
 		   u.setPass(string2);
 		   u.setType(string3);
 	}
-
-	@When("the user is registered")
-	public void the_user_is_registered() {
-	    
-		 if(correct){
-	         User.adduser(u);
-	   }
-	     else
-	          assertFalse(false);
+	@When("the user is registered {string}")
+	public void the_user_is_registered(String string) {
+		
+		if(!u.isRegest(string))
+			 User.adduser(u);
+		 
 	}
+
+	
 
 	@Then("the user whith NAME {string} , PASSWORD {string} , Type {string} is registered in the system")
 	public void the_user_whith_name_password_type_is_registered_in_the_system(String string, String string2, String string3) {
 	    
-		 if(u.isRegest(string))
+		 if(!u.isRegest(string))
 		assertTrue(true);
 	}
 
@@ -55,6 +54,3 @@ public class Register {
 
 
 }
-
-
-
