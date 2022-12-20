@@ -1,10 +1,11 @@
 	package pak.proj;
 	
-	import java.text.ParseException;
-	import java.text.SimpleDateFormat;
-	import java.util.Date;
-	import java.util.Locale;
-	import java.util.logging.Level;
+	
+import java.util.ArrayList;
+
+import java.util.List;
+
+	
 	import java.util.logging.Logger;
 
 	public class Calender 
@@ -13,52 +14,71 @@
 		
 		 static Logger logger
 		   = Logger.getLogger(Calender.class.getName());
-		 boolean v;
-		 boolean book;
-		 String time;
-		 Date strt, end;
+		 
+		 String day;
+		 String month;
+		 String hours;
+		 String menet;
+		 protected static List<Calender> date1 =new ArrayList<Calender>();
+		 
 		public Calender() {
-			v = true;
+			Calender.date1.add(new Calender("1","5","12","30"));
 			
 		}
-	@SuppressWarnings("unlikely-arg-type")
-	public boolean booking (Date start,Date end,String time) throws ParseException {
-		
-		for(int i=0;i<Corse.corses.size();i++) {
-			String date1=Corse.corses.get(3).toString();
-			String date2=Corse.corses.get(4).toString();
-			SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy", Locale.ENGLISH);
-	        Date date3 = formatter.parse(date1);
-	        Date date4 = formatter.parse(date2);
-	        
-	        if (date3.after(start)||date4.before(end)||start.equals(date3)||end.equals(date4))	
-	        {	
-
-	        	logger.log(Level.INFO,"choose anther date or time\n");
-
-	        	v=false;
-	        }
-	        else {
-	        
-	        	logger.log(Level.INFO,"booking done\n");
-	        	v=true;
-	        	
-	        }
-	        
-	       
+	public Calender(String day2, String month2, String hours2, String menet2) {
+			this.month=month2;
+			this.day=day2;
+			this.menet=menet2;
+			this.hours=hours2;
 		}
-		return v;
-	}
-    
-	public void setbookstat(boolean l) {
-		
-		this.book = l;
-	}
 
-	public boolean getbookstat() {
+    
+	
+
+	
+	public void setDay(String string) {
+		this.day = string;
 		
-		return book;
 	}
+	public void setMonth(String string) {
+		this.month =string;
+		
+	}
+	public void setTime(String string3, String string4) {
+		this.hours=string3;
+		this.menet=string4;
+		
+	}
+	public String getDay() {
+		
+		return day;
+	}
+	public String getMonth() {
+		
+		return month;
+	}
+public String getMenet() {
+		
+		return menet;
+	}
+public String getHours() {
+	
+	return hours;
+}
+
+	public boolean isBooked(String string, String string2, String string3, String string4) {
+		 
+		 for (int i = 0 ; i<date1.size();i++) {
+				if (date1.get(i).getMonth().equals(string) && date1.get(i).getDay().equals(string2)&& date1.get(i).getMenet().equals(string3) && date1.get(i).getHours().equals(string4))
+					
+					   return true;
+			}
+		 
+		return false;
+	}
+	
+
+	
   
 	
 	}

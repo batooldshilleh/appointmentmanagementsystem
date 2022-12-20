@@ -21,27 +21,31 @@ public void teacher_is_looged_in() {
 if(u.getLogstat()==true)
 	assertTrue(u.getLogstat());
 }
-
-@When("he choose a new Appointment")
-public void he_choose_a_new_appointment() {
-	c.setbookstat(true);
-	if(c.getbookstat()==true)
-		assertTrue(c.getbookstat());
-	
+    
+@When("he set day {string} monthe {string} houre {string} menet {string}")
+public void he_set_day_monthe_houre_menet(String string, String string2, String string3, String string4) {
+    c.setDay(string);
+    c.setMonth(string2);
+    c.setTime(string3,string4);
+}
+@When("he choose a new Appointment day {string} monthe {string} houre {string} menet {string}")
+public void he_choose_a_new_appointment_day_monthe_houre_menet(String string, String string2, String string3, String string4) {
+	 
+	    c.setMonth(string2);
+	    c.setTime(string3,string4);
+}
+@When("there is no conflict with time day {string} monthe {string} houre {string} menet {string}")
+public void there_is_no_conflict_with_time_day_monthe_houre_menet(String string, String string2, String string3, String string4) {
+	if(c.isBooked(string,string2,string3,string4)==false)
+		assertTrue(true);
 }
 
-
-@When("there is no conflict with time")
-public void there_is_no_conflict_with_time() {
-	if(c.getbookstat()==true)
-		assertTrue(c.getbookstat());
-	
-}
 
 
 @Then("The booking process was successful")
 public void the_booking_process_was_successful() {
-    c.setbookstat(true);
+	
+   
 	assert(true);
 }
 
@@ -50,12 +54,12 @@ public void a_msg1_will_apper(String string) {
 	logger.log(Level.INFO,"done");
 }
 
-@When("there is conflict with time")
-public void there_is_conflict_with_time() {
-	if(c.getbookstat()==false)
-		assertFalse(c.getbookstat());
-}
 
+@When("there is conflict with time day {string} monthe {string} houre {string} menet {string}")
+public void there_is_conflict_with_time_day_monthe_houre_menet(String string, String string2, String string3, String string4) {
+	if(!(c.isBooked(string,string2,string3,string4)==true))
+		assertTrue(true);
+}
 @Then("The booking process was not successful")
 public void the_booking_process_was_not_successful() {
 	assert(true);

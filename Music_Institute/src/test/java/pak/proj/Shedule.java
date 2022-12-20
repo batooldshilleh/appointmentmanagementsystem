@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
-public class SheduleTest {
+public class Shedule {
 	
 	Corse c = new Corse();
 	Student s = new Student();
@@ -56,6 +56,7 @@ public void number_of_studint_in_class_less_than_the_max(Integer int1) {
 public void the_article_is_registered(Integer c) {
     boolean b = s.corsinfo(c);
 	 if(!b) {
+		 
 	 assertTrue(true);
 }
 
@@ -97,10 +98,9 @@ public void there_is_conflict_with(Integer c) {
 	@Given("The number of student more than {int}")
 	public void the_number_of_student_more_than(Integer coursnum) {
 	    
-		 boolean full = false;
-	     if (c.corseinfo(coursnum).getnos() == 25 )
-	    	 full = true;
-	    	 assertFalse(full);
+		 
+	     if (!(c.corseinfo(coursnum).getnos() < 25 ))
+	    	 assertFalse(false);
 		
 	}
 
@@ -115,29 +115,5 @@ public void there_is_conflict_with(Integer c) {
 
 	
 	
-	@Given("There is no conflict with any {int}")
-	public void there_is_no_conflict_with_any(Integer cn) {
-	    
-		   if(!s.corsinfo(cn)){
-		    	s.sucsses(true);
-		    	s.addcorse(cn);
-		    	c.incstudantNumber();
-		    	assertTrue(s.getsucss());
-		    }
-			
-	}
-	@Given("The premium paid is sufficient the {string}")
-	public void the_premium_paid_is_sufficient_the(String un) {
-	    
-		 if(!s.haveinofmony()) 
-    	assertFalse(false);
-	
-	}
-	@Given("The premium paid not enough lees thean {string}")
-	public void the_premium_paid_not_enough_lees_thean(String un) {
-	    
-		if(!s.haveinofmony()) 
-	    	assertFalse(false);
-		
-	}
+
 }

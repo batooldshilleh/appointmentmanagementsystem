@@ -12,6 +12,7 @@ public class User {
 	String password;
 	String username;
 	String type;
+	int aom;
     private boolean logged;
   	static boolean n;
   	static boolean m;
@@ -31,7 +32,7 @@ public class User {
     	this.username=(name);
     	this.password=(pass);
         this.type=(type);
-        User.amontofmony=i;
+        this.aom=i;
 
     	
     }

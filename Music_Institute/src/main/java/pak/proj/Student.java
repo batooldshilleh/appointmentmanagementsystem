@@ -14,6 +14,7 @@ public class Student {
 		protected static final  int MAXCOURSES = 4;
 		protected boolean sucss;
 		protected int amontofmony;
+		
 	    public Student(String name){  
 	        this.name = name;
 	        
@@ -23,25 +24,14 @@ public class Student {
 	    public Student() {
 			
 	    	Student.coursee.add(new Corse(1,"playing violin",200,10));
+	    	Student.coursee.add(new Corse(1,"playing violin",200,25));
 		}
 
 
-		public String getstudentName(){
-	        return this.name;
-	    }
-	    public void setstudentName(String names){
-	        this.name = names;
-	    }
+		
 	  
 	  
-	    public boolean addco(Corse courses){
-
-			if (!coursee.contains(courses)){
-				coursee.add(courses);
-				return true;
-			}
-			return false;
-		}
+	 
 
 
 		public void sucsses(boolean b) {
